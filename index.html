@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevSeeker | GitHub Profile Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark">D</span>
+        <span class="brand-name">DevSeeker</span>
+      </div>
+
+      <form id="topForm" class="search">
+        <input type="text" id="topInput" placeholder="Search a GitHub username" autocomplete="off" aria-label="GitHub username">
+        <button type="submit">Analyze</button>
+      </form>
+
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">Light</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section id="empty" class="empty">
+      <h1>How strong is your GitHub profile?</h1>
+      <p>Get a score out of 100 and a checklist of exactly what to improve.</p>
+
+      <form id="heroForm" class="search search-lg">
+        <input type="text" id="heroInput" placeholder="Enter a GitHub username" autocomplete="off" aria-label="GitHub username">
+        <button type="submit">Analyze</button>
+      </form>
+
+      <div class="chips">
+        <span>Try</span>
+        <button class="chip" data-user="torvalds">torvalds</button>
+        <button class="chip" data-user="gaearon">gaearon</button>
+        <button class="chip" data-user="octocat">octocat</button>
+        <button class="chip" data-user="sindresorhus">sindresorhus</button>
+      </div>
+    </section>
+
+    <div id="message"></div>
+
+    <div id="results" class="results" hidden>
+      <aside id="profile" class="panel profile"></aside>
+      <div class="main-col">
+        <section id="analysis" class="panel"></section>
+        <section id="languages" class="panel"></section>
+        <section id="repos" class="panel"></section>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
